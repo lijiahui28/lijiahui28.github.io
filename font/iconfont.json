@@ -1,0 +1,44 @@
+{
+  "id": "1558683",
+  "name": "github",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1444967",
+      "name": "nodejs",
+      "font_class": "nodejs",
+      "unicode": "e80e",
+      "unicode_decimal": 59406
+    },
+    {
+      "icon_id": "3876353",
+      "name": "vuejs",
+      "font_class": "vuejs",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "3876406",
+      "name": "css3",
+      "font_class": "css",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "5634733",
+      "name": "js",
+      "font_class": "js",
+      "unicode": "f1db",
+      "unicode_decimal": 61915
+    },
+    {
+      "icon_id": "7239494",
+      "name": "html5",
+      "font_class": "html",
+      "unicode": "e6f9",
+      "unicode_decimal": 59129
+    }
+  ]
+}
