@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			margin-left:400px;
+		}
+		.box{
+			width:500px;
+			height:300px;
+			margin-bottom: 20px;
+		}
+		img{
+			width:100%;
+			height:100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" v-no1>
+		<div v-for="i in 20" class="box">
+			<img src="" u_src="http://01.minipic.eastday.com/20170210/20170210103722_d426e3d54dcde641593a366114a20385_6.jpeg">
+		</div>
+	</div>
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+	Vue.directive('no1',{
+		bind(){
+
+		},
+		inserted(dom){
+			console.log(dom)
+			var div=dom.getElementsByClassName('box')
+			var img=dom.getElementsByTagName('img')
+			for(var i=0;i<3;i++){
+				img[i].src=img[0].getAttribute('u_src')
+			}
+			onscroll=function(){
+				
+				var top=document.documentElement.scrollTop
+				var height=document.documentElement.clientHeight/2;
+				console.log(img[0].getAttribute('u_src'))
+				console.log(img)
+				for(var i=0;i<img.length;i++){
+					if(img[i].offsetTop<top+height){
+						
+							img[i].src=img[0].getAttribute('u_src')
+						
+						
+					}else{
+						if(i>1){
+							img[i].src=''
+						}
+						
+					}
+				}
+			}
+		}
+	})
+	new Vue({
+		el:'#box'
+
+	})
+</script>
