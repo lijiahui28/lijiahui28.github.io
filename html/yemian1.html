@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广告设计</title>
+    <script src="vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000;
+            height: 125px;
+            text-align: center;
+        }
+
+        header img {
+            width: 275px;
+            height: 78px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            left: 0;
+            margin-top: -39px;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+
+        .l {
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            line-height: 30px;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            font-size: 20px;
+            color: #FFFFFF;
+            margin-top: -15px;
+            border-radius: 50%;
+        }
+
+        .r {
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            font-size: 20px;
+            color: #FFFFFF;
+            margin-top: -15px;
+        }
+
+        .l-leave {
+            opacity: 1;
+            left: 0;
+        }
+
+        .l-leave-active,
+        .l-enter-active {
+            transition: all .3s;
+        }
+
+        .l-leave-to {
+            opacity: 0;
+            left: -100%;
+        }
+
+        .l-enter {
+            left: 100%;
+            opacity: 0;
+        }
+
+        .l-enter-to {
+            left: 0;
+            opacity: 1;
+        }
+
+        .r-leave {
+            opacity: 1;
+            left: 0;
+        }
+
+        .r-leave-active,
+        .r-enter-active {
+            transition: all .3s;
+        }
+
+        .r-leave-to {
+            left: 100%;
+            opacity: 0;
+        }
+
+        .r-enter {
+            opacity: 0;
+            left: -100%;
+        }
+
+        .r-enter-to {
+            opacity: 1;
+            left: 0;
+        }
+
+        .search {
+            background-color: #efefef;
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" v-cloak="">
+        <header>
+            <img src="https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNGU3ZTRlZThiZTI5YjI4M2Y4Y2VkOGZkYmVjYmY4NTAucG5n.png"
+                alt="">
+        </header>
+        <no1 style="width: 100%;overflow: hidden;" :box_arr="arr"></no1>
+        <div class="search">
+            <p style="font-size: 20px;margin-bottom: 30px;">做最专业的广告设计公司</p>
+            <p style="font-size: 28px;margin-bottom: 50px;">我们团队将为客户提供最具价值和竞争力的企业品牌形象</p>
+            <div
+                style="width: 350px;border: 1px solid #ef4d1c;margin: 0 auto;height: 38px;line-height: 36px;position: relative;">
+                <input type="text"
+                    style="border: none;width: 100%;height: 100%;background-color: #efefef;outline: none;font-size: 100%;padding: 6px 10px 5px;box-sizing: border-box;"
+                    placeholder='所属业务范围'>
+                <span
+                    style="background-color: #ef4d1c;position: absolute;right: 0;height: 100%;color: #fff;width: 52px;">查询</span>
+            </div>
+        </div>
+        <no2>
+            <span slot="no2a">我们的业务领域</span>
+            <span slot="no2b">海量案例欣赏</span>
+        </no2>
+        <div class="logo" style="background-color: #ef4d1c;overflow: hidden;">
+            <no3></no3>
+        </div>
+        <div style="overflow: hidden;">
+            <no4></no4>
+        </div>
+        <div style="overflow: hidden;">
+            <no5>
+                <span slot="no5a">VI</span>
+                <span slot="no5b">视觉识别系统</span>
+                <span slot="no5c">通过设计将品牌策略转化为独特而有意义的视觉符号，建 立打动人心的品牌形象</span>
+            </no5>
+            <no5>
+                <span slot="no5a">SAMPLE</span>
+                <span slot="no5b">画册设计</span>
+                <span slot="no5c">我们在画册的整体视觉规划、素材拍摄与选取、内容排版
+                    画面创意等每个环节都精益求精，我们坚持一本好的画册
+                    让读者耳目一新</span>
+            </no5>
+            <no5>
+                <span slot="no5a">SAMPLE</span>
+                <span slot="no5b">画册设计</span>
+                <span slot="no5c">我们在画册的整体视觉规划、素材拍摄与选取、内容排版
+                    画面创意等每个环节都精益求精，我们坚持一本好的画册
+                    让读者耳目一新</span>
+            </no5>
+            <no5>
+                <span slot="no5a">VI</span>
+                <span slot="no5b">视觉识别系统</span>
+                <span slot="no5c">通过设计将品牌策略转化为独特而有意义的视觉符号，建 立打动人心的品牌形象</span>
+            </no5>
+            <no5>
+                <span slot="no5a">VI</span>
+                <span slot="no5b">视觉识别系统</span>
+                <span slot="no5c">通过设计将品牌策略转化为独特而有意义的视觉符号，建 立打动人心的品牌形象</span>
+            </no5>
+            <no5>
+                <span slot="no5a">SAMPLE</span>
+                <span slot="no5b">画册设计</span>
+                <span slot="no5c">我们在画册的整体视觉规划、素材拍摄与选取、内容排版
+                    画面创意等每个环节都精益求精，我们坚持一本好的画册
+                    让读者耳目一新</span>
+            </no5>
+        </div>
+        <no2>
+            <span slot="no2a">关于我们</span>
+            <span slot="no2b">联系我们</span>
+        </no2>
+        <div style="overflow: hidden;">
+            <div style="width: 50%;float: left;height: 500px;background-color: #ef4d1c;text-align: center;color: #fff;">
+                <p style="font-size: 44px;margin-top: 70px;margin-bottom: 48px;">CONTACT US</p>
+                <p style="font-size: 16px;margin-bottom: 24px;line-height: 24px;"><span style="font-weight: bold;">苏州某某广告传媒有限公司</span><br><span>Suzhou Advertising.Co.,Ltd</span></p>
+                <p style="font-size: 16px;margin-bottom: 24px;line-height: 24px;"><span style="font-weight: bold;">苏州市工业园区金鸡湖大道00号</span><br><span style="font-size: 14px;">JIJINHU ROAD ,NO.00,INDUSTRIALPARK,SUZHOU</span></p>
+                <p style="font-size: 12px;margin-bottom: 24px;line-height: 24px;"><span>Copyright © 2016 商业广告公司. All rights reserved.</span></p>
+            </div>
+            <div style="width: 50%;float: left;height: 500px;background-color:#252525;text-align: center;color: #fff;">
+                <p style="margin-top: 150px;font-size: 16px;line-height: 30px;">
+                    总 机：0500-1000-1000
+                </p>
+                <p style="font-size: 16px;line-height: 30px;">
+                    咨询热线： 4000-100-000
+                </p>
+                <p style="font-size: 16px;line-height: 30px;">
+                    传 真：0500-1000-000
+                </p>
+                <p style="font-size: 16px;line-height: 30px;">
+                    E-mail：company@aa.com
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 轮播图 -->
+    <template id="no1">
+        <div style="position:relative">
+            <transition :name="tran" v-for="(i,$index) in arr">
+                <div style="width: 100%;position: absolute;" v-show="$index==index">
+                    <img :src="i" width="100%" ref="img" />
+                </div>
+            </transition>
+            <div class="l" @click="l">
+                < </div> <div class="r" @click="r">
+                    >
+            </div>
+        </div>
+    </template>
+    <!-- 标题 -->
+    <template id="no2">
+        <div style="height: 130px;background-color: #000;position: relative;">
+            <div
+                style="height: 30px;line-height: 30px;color: #a9a9a9;font-size: 26px;position: absolute;top: 50%;margin-top: -15px;left: 0;width: 100%;text-align: center;">
+                <slot name='no2a'></slot>
+                <span style="color: #fff;">&</span>
+                <slot name='no2b'></slot>
+            </div>
+        </div>
+    </template>
+    <!-- logo -->
+    <template id="no3">
+        <div>
+            <div v-for='i in no3'
+                style="width: 16.6666666666666%;text-align: center;color: #fff;padding-top: 20px;padding-bottom: 20px;float: left;">
+                <img :src="i" alt=""><br>
+                <span style="font-size: 15px;margin-bottom: 5px;display: inline-block;">VI设计</span><br>
+                <span style="font-size: 12px;">VI DESIGN</span>
+            </div>
+        </div>
+    </template>
+    <!-- 展示图 -->
+    <template id="no4">
+        <div>
+            <div @mouseover='index=$index' @mouseleave='index="-1"' v-for='(i,$index) in no4'
+                style="width: 16.6666666666666%;height:190px;float: left;position: relative;">
+                <img style="position: absolute;left: 0;padding: 0;" :src="i" width="100%" height="100%" alt="">
+                <img v-show='$index==index' style="position: absolute;left: 0;padding: 0;"
+                    src="https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNGNhMTU1ODQyNWUyYmVhMGRmZDc0NTg0ZmUxNDBjMTkuanBn.jpg"
+                    width="100%" height="100%" alt="">
+            </div>
+        </div>
+    </template>
+    <!-- 分类展示 -->
+    <template id="no5">
+        <div style="width: 50%;height: 500px;background-image: url('https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvZjRlYWNkZDJjMjI4OTRjZjczNWE3ZjNkYmEwZDhkMGQuanBn.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            background-position: 0 0%;float: left;">
+            <div style="width: 450px;padding-top: 110px;color: #fff;margin: 0 auto;">
+                <p style="font-size: 68px;margin-bottom: 20px;">
+                    <slot name='no5a'></slot>
+                </p>
+                <p style="font-size: 28px;margin-bottom: 20px;">
+                    <slot name='no5b'></slot>
+                </p>
+                <p style="font-size: 14px;line-height: 24px;">
+                    <slot name='no5c'></slot>
+                </p>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>
+<script>
+    // 轮播图
+    Vue.component('no1', {
+        template: "#no1",
+        props: ['box_arr'],
+        data() {
+            return {
+                arr: this.box_arr,
+                index: 0,
+                tran: 'l'
+            }
+        },
+        methods: {
+            r() {
+                this.tran = 'l'
+                this.index++
+                if (this.index >= this.arr.length) {
+                    this.index = 0
+                }
+            },
+            l() {
+                this.tran = 'r'
+                this.index--
+                if (this.index <= -1) {
+                    this.index = this.arr.length - 1
+                }
+            }
+        },
+        mounted() {
+            var img = this.$refs.img[0]
+            img.onload = () => {
+                var h = this.$refs.img[0].offsetHeight
+                for (var i = 0; i < this.$refs.img.length; i++) {
+                    this.$refs.img[i].style.height = h + 'px'
+                }
+                this.$el.style.height = h + 'px'
+            }
+        }
+    })
+    Vue.component('no2', {
+        template: '#no2'
+    })
+    Vue.component('no3', {
+        template: '#no3',
+        data() {
+            return {
+                no3: [
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNWFlYjg5MGI0MmQ3ZTI2Yjc3MTI1Y2JlYTY3NWRlMWYucG5n.png',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNjAyNzM5ZTRiZTJhZjRkYzFkMzYxZTYxMjgxOTg5MWYucG5n.png',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMTlkNWNiNmJkYWU1NGFjMWNhMzY0YmJjMDFjOTEwN2EucG5n.png',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvYWFmMDUxMWMzZjQwMjRkNGFmMGM1NjI4NTRjODE3ZjcucG5n.png',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMWU1MjY2Y2UyNzA5MjBiZDQ2N2YxZjhhM2ZkZTkyMzIucG5n.png',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvYjc5ODI1NDBkMmExMzk2MDc1ZTc2NWMxNmI2NTA5YTkucG5n.png'
+                ]
+            }
+        }
+    })
+    Vue.component('no4', {
+        template: '#no4',
+        data() {
+            return {
+                no4: [
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMDllYzc0YjZmYzk0YjQyYTNhOTc5ZTI4ZDYxMzk0ZWUuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNTg5MGY5MzQ0MmIyNzdjZjJlMWJmOGZhZDhjMDQxY2IuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvY2RhZmQ1ODExZmFiZjZjODUwNmM0MzU0MWQ3Y2IwN2MuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNWQ0M2VhOGVhNTA0ZTUyY2ExMDFmZmQ2ZTU1ZDNiNTkuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNTVjODAwMjlmNTg1MDYwZGEzZmM4ZjE4OGUwZjkyOTEuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvODkxYzQ4ZDVhODYyZjIzNmI3NGQ4OTc0NjQ4NTkzZGMuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMDllYzc0YjZmYzk0YjQyYTNhOTc5ZTI4ZDYxMzk0ZWUuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNTg5MGY5MzQ0MmIyNzdjZjJlMWJmOGZhZDhjMDQxY2IuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvY2RhZmQ1ODExZmFiZjZjODUwNmM0MzU0MWQ3Y2IwN2MuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNWQ0M2VhOGVhNTA0ZTUyY2ExMDFmZmQ2ZTU1ZDNiNTkuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNTVjODAwMjlmNTg1MDYwZGEzZmM4ZjE4OGUwZjkyOTEuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvODkxYzQ4ZDVhODYyZjIzNmI3NGQ4OTc0NjQ4NTkzZGMuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMDllYzc0YjZmYzk0YjQyYTNhOTc5ZTI4ZDYxMzk0ZWUuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNTg5MGY5MzQ0MmIyNzdjZjJlMWJmOGZhZDhjMDQxY2IuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvY2RhZmQ1ODExZmFiZjZjODUwNmM0MzU0MWQ3Y2IwN2MuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNWQ0M2VhOGVhNTA0ZTUyY2ExMDFmZmQ2ZTU1ZDNiNTkuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvNTVjODAwMjlmNTg1MDYwZGEzZmM4ZjE4OGUwZjkyOTEuanBn.jpg',
+                    'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvODkxYzQ4ZDVhODYyZjIzNmI3NGQ4OTc0NjQ4NTkzZGMuanBn.jpg',
+                ],
+                index: -1,
+            }
+        }
+    })
+    Vue.component('no5', {
+        template: '#no5'
+    })
+
+    new Vue({
+        el: "#box",
+        data: {
+            arr: [
+                'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMGRlNzliYzg3NzM3M2U5MTA5ZmNlYjFhMTBhOGNmMmUuanBn.jpg',
+                'https://ccdn.goodq.top/caches/6b8c2cf2cebeaaa4c7edd7e84abf1464/aHR0cHM6Ly81NjU2OWE3NWUyN2QyLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvZDkyMjg5ZTU1ZGZiMWZhNjRhOWVkOWYzZDZhNzU3YWUuanBn.jpg',
+            ]
+        }
+    })
+</script>

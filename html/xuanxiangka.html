@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <script src="vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        .active{
+            border-top: 2px solid orange;
+            background-color:#fff ;
+            height:49px;
+            border-right: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+        .active a{
+            color: blue;
+        }
+        .active a:hover{
+            text-decoration: underline;
+        }
+        .li a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <no1 :attr='arr' style="width: 1000px;border:1px solid #ccc;margin: 20px auto;"></no1>
+    </div>
+    <!-- 组件 -->
+    <template id="no1">
+        <div>
+            <ul style="background-color: #eee;height:50px;">
+                <li style="width: 150px;float: left;text-align:center;line-height: 50px;position:relative;top:0;left:0" v-for='(i,$index) in c_attr' @mouseover='type=$index' :class='type==$index?"active":""' ><a href="#">{{i.title}}</a></li>
+            </ul>
+            <div style="border-top: 1px solid #ccc;min-height: 200px;padding-top: 20px;">
+                <ul style="padding-left: 50px;" v-for="(i,$index) in c_attr" v-show='type==$index'>
+                    <li class="li" style="list-style:square;line-height: 50px;" v-for="t in i.content "><a href="#">{{t}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>
+<script>
+    Vue.component('no1', {
+        template: '#no1',
+        props: ['attr'],
+        data() {
+            return {
+                c_attr: this.attr,
+                type: '0'
+            }
+        }
+    })
+    new Vue({
+        el: '#box',
+        data: {
+            arr: [{
+                title: 'jquery 特效',
+                content: ['jquery表格变色隔行变色鼠标滑过竖直表格内容变色效果',
+                    'jQuery浮动层点击图标按钮关闭或展开',
+                    'jquery浮动定位层导航描点上下滚动的浮动导航',
+                    'jquery 表格插件控制表格表格内容拖动标题固定在顶部',
+                    'jquery表格可编辑修改表格里面的数值'
+                ]
+            }, {
+                title: 'javascript 特效',
+                content: ['js图片切换插件带滤镜百叶窗图片js幻灯片切换特效',
+                    'js图片特效制作js焦点图上下滚动slider切换效果',
+                    'javascript图片特效 网站banner制作焦点图片切换带按钮和固定图标控制',
+                    'js文字切换特效制作焦点文字带滤镜切换效果',
+                    'js文字特效制作js文字闪烁与文字变色效果'
+                ]
+            }, {
+                title: 'div+css 教程',
+                content: ['div+css制作在IE6 上用absolute模拟fixed IE6浏览器定位层框不闪动',
+                    'CSS如何定位工程',
+                    'div+css导航菜单用CSS样式表处理斜角导航条',
+                    '用div+css3美化制作动画导航特效鼠标滑过动画显示',
+                    'css3教程应用css3 transform属性 图片旋转与盒投影+鼠标悬停效果'
+                ]
+            }, {
+                title: 'HTML5 特效',
+                content: ['jquery 图片特效用CSS3和HTML5制作仿动画头条报纸缩小到放大翻转图片展示',
+                    'jquery 幻灯片切换应用一个HTML5的幻灯片',
+                    'jquery 图片滚动特效应用旋转幻灯片使用jQuery和CSS3',
+                    'jquery html5 canvas 图表插件获取表格数据值生成走势图',
+                    'jquery select框应用jquery ui滑块slider制作日期时间进度条'
+                ]
+            }]
+        },
+        methods: {
+            btn() {
+
+            }
+        }
+    })
+</script>
