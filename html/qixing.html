@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		#box {
+			padding: 0 35px;
+		}
+
+		.header {
+			height: 60px;
+			overflow: hidden;
+		}
+
+		.div {
+			width: 150px;
+			height: 60px;
+			float: left;
+		}
+
+		.div img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.header ul {
+			float: left;
+			margin-top: 5px;
+			margin-left: 240px;
+		}
+
+		.header li {
+			float: left;
+			width: 100px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			margin-right: 15px;
+			/*
+			border-bottom:10px #e05193 solid;*/
+
+		}
+
+		.header li:hover {
+			border-bottom: 1px #e05193 solid;
+			color: #e05193;
+		}
+
+		.li {
+			color: #e05193;
+			border-bottom: 1px #e05193 solid;
+			font: normal 600 16px / 24px "微軟正黑體", Helvetica, Arial, Verdana, sans-serif;
+			text-transform: none;
+
+		}
+
+		.nav {
+			margin-top: 80px;
+		}
+
+		.nav h4 {
+			font-family: Oswald;
+			font-size: 80px;
+			font-weight: bold;
+			font-style: normal;
+			color: #000000;
+			margin-left: 500px;
+			margin-bottom: 20px;
+		}
+
+		.nav p {
+			margin-left: 200px;
+			width: 700px;
+			text-align: center;
+			line-height: 26px;
+			letter-spacing: inherit;
+			margin-bottom: 20px;
+
+		}
+
+		.nav span {
+			margin-left: 460px;
+			font-weight: bold;
+
+			cursor: pointer;
+		}
+
+		.nav b {
+			margin-left: 40px;
+			cursor: pointer;
+		}
+
+		.main {
+			width: 100%;
+			min-height: 500px;
+			padding: 40px 0;
+			border-bottom: 1px #ccc solid;
+			border-top: 1px solid #ccc;
+			margin-top: 30px;
+		}
+
+		.main img {
+			width: 100%;
+			height: 90%;
+		}
+
+		.content {
+			overflow: hidden;
+			margin-top: 40px;
+		}
+
+		.left {
+			float: left;
+			margin-right: 50px;
+		}
+
+		.center {
+			float: left;
+			border-left: 1px #ccc solid;
+			border-right: 1px #ccc solid;
+			width: 180px;
+			text-align: center;
+			margin-right: 23px;
+			margin-bottom: 40px;
+		}
+
+		.center li {
+			line-height: 40px;
+			width: 160px;
+			text-align: center;
+			height: 140px;
+			padding-top: 20px;
+			border-bottom: 1px solid #ccc;
+			margin-left: 10px;
+		}
+
+		.center p {
+			font-family: 微軟正黑體;
+			font-size: 16px;
+			font-weight: bold;
+			font-style: normal;
+			color: #000;
+			padding: 0 0 20px 0;
+			display: block;
+			padding: 0 0 20px 0;
+			vertical-align: bottom;
+		}
+
+		.center span {
+
+			font-family: georgia;
+			font-size: 14px;
+			font-weight: normal;
+			font-style: normal;
+			color: #000;
+			display: block;
+			padding: 2px;
+			vertical-align: bottom;
+		}
+
+		.right {
+			width: 900px;
+
+			float: left;
+		}
+
+		.right img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.m-content {
+			overflow: hidden;
+			padding: 40px 0;
+			border-top: 1px #ccc solid;
+			border-bottom: 1px #ccc solid;
+			margin-bottom: 40px;
+		}
+
+		.m-left {
+			float: left;
+		}
+
+		.m-right {
+			margin-left: 40px;
+			width: 1100px;
+			float: left;
+		}
+
+		.m-right div {
+			width: 270px;
+			float: left;
+			border-left: 1px #ccc solid;
+			text-align: center;
+		}
+
+		.m-right img {
+			margin-left: 5px;
+			width: 80%;
+			height: 80%;
+			margin-bottom: 20px;
+		}
+
+		.m-right p {
+			margin-bottom: 20px;
+			margin-left: 5px;
+
+			color: #222222;
+			font-size: 18px;
+			line-height: 24px;
+		}
+
+		.m-right span {
+			margin-left: 30px;
+			color: #000000;
+			font-size: 14px;
+			font-family: 微軟正黑體;
+		}
+
+		.g-content {
+			overflow: hidden;
+			border-bottom: 1px #ccc solid;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+		}
+
+		.g-left {
+			float: left;
+			margin-right: 30px;
+		}
+
+		.g-right {
+			float: left;
+			width: 1100px;
+		}
+
+		.g-right div {
+			width: 100px;
+			float: left;
+			margin-right: 40px;
+			height: 226px;
+			border-left: 1px #ccc solid;
+			padding-left: 20px;
+			font-size: 14px;
+			padding-top: 200px;
+			color: rgb(0, 0, 0);
+			font-family: 微軟正黑體;
+		}
+
+		.g-right div h3 {
+			margin-bottom: 20px;
+		}
+
+		.g-right div p {
+			margin-bottom: 20px;
+		}
+
+		.g-right img {
+			width: 930px;
+			float: left;
+		}
+
+		.footer h3 {
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box">
+		<div class="header">
+			<div class="div">
+				<img src="https://ccdn.goodq.top/caches/c6f1037431be2e57c07dd414fe5102a6/aHR0cHM6Ly81Y2Y2NTNjNTA1ZmUxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvYmM4OGZhYmNmNzQ3OWU1ZTBlYTAxNjYwNzBmM2U2NzgucG5n.png"
+					alt="">
+			</div>
+			<ul>
+				<li class="li">首页</li>
+				<li>商品</li>
+				<li>品牌</li>
+				<li>活动</li>
+			</ul>
+			<svg xmlns="http://www.w3.org/2000/svg"></svg>
+		</div>
+		<div class="nav">
+			<h4>骑行</h4>
+			<p>被穿著在WorldTour赛事中贏得勝利，Aero系列包含有我們最速和最先進科技化的競赛車服。歷經多年研發只為助您縮短比赛秒數。</p>
+			<span>Shop Men</span>
+			<b>Shop Women</b>
+		</div>
+		<div class="main">
+			<img src="https://ccdn.goodq.top/caches/c6f1037431be2e57c07dd414fe5102a6/aHR0cHM6Ly81Y2Y2NTNjNTA1ZmUxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYjBkNjk2MGQ2MDFlNDUyMDAxNzU2MmRkYjJjY2UwN2QtMTkyMHg4NjAuanBn.jpg"
+				alt="">
+		</div>
+		<div class="content">
+			<div class="left">
+				<img src="https://ccdn.goodq.top/caches/c6f1037431be2e57c07dd414fe5102a6/aHR0cHM6Ly81Y2Y2NTNjNTA1ZmUxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvYTJiZjEyYzRjNzMxNDUzMjEyOGI2NzExOTg5ZWQ0OGUuc3Zn.svg"
+					alt="">
+			</div>
+			<div class="center">
+				<no1></no1>
+			</div>
+			<div class="right">
+				<img src="https://ccdn.goodq.top/caches/c6f1037431be2e57c07dd414fe5102a6/aHR0cHM6Ly81Y2Y2NTNjNTA1ZmUxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmRmODdmNzAzNzhkYjQwZjk3NzQzYWZhNWRiZDA4N2YtMTUwMHg4MDAuanBn.jpg"
+					alt="">
+			</div>
+
+		</div>
+		<div class="m-content">
+			<div class="m-left">
+				<img src="https://ccdn.goodq.top/caches/c6f1037431be2e57c07dd414fe5102a6/aHR0cHM6Ly81Y2Y2NTNjNTA1ZmUxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNmM5YWVmOWVkNjYwOWU1YzI4MjFlNGQxOWU3YTg2NTAuc3Zn.svg"
+					alt="">
+			</div>
+			<no2></no2>
+		</div>
+		<div class="g-content">
+			<div class="g-left">
+				<img src="https://ccdn.goodq.top/caches/c6f1037431be2e57c07dd414fe5102a6/aHR0cHM6Ly81Y2Y2NTNjNTA1ZmUxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvYjNhZmNkODY5Mjk0ZGUzMjllYjM0OTdjZTc5YzkzNjkuc3Zn.svg"
+					alt="">
+			</div>
+			<div class="g-right">
+				<div>
+					<h3>品牌介绍</h3>
+					<p>自行车骑行服以舒适骑行为主要目的，侧重于速干、高弹、保温、排汗性能；对防护性能的要求弱于摩托车骑行服。</p>
+					<span>See More</span>
+				</div>
+				<img src="https://ccdn.goodq.top/caches/c6f1037431be2e57c07dd414fe5102a6/aHR0cHM6Ly81Y2Y2NTNjNTA1ZmUxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNGY4ZTFjODBlZDc3MjA4ZDE2MTFmOTBjODFiZmFhYmEtMTUwMHg4MDAuanBn.jpg"
+					alt="">
+			</div>
+
+		</div>
+
+		<no3></no3>
+		<no3></no3>
+
+	</div>
+	<template id="no1">
+		<div>
+			<ul>
+				<li v-for="i in arr">
+					<p>{{i.a}}</p>
+					<span>{{i.b}}</span>
+				</li>
+
+			</ul>
+		</div>
+	</template>
+	<template id="no2">
+		<div class="m-right">
+			<div v-for="i in arr">
+				<img :src="i.a" alt="">
+				<p>{{i.b}}</p>
+				<span>{{i.c}}</span>
+			</div>
+		</div>
+	</template>
+	<template id="no3">
+		<div style="float:left;width:530px;margin-left: 50px;">
+			<h3 style="margin-bottom: 30px;font-size: 18px;">客户服务</h3>
+			<div style="border-top:1px solid #ccc;border-bottom: 1px solid #ccc;padding-top: 25px;padding-bottom: 40px;line-height: 30px;font-size: 13px;
+    font-family: 微軟正黑體;">
+				<div v-for="i in arr">
+					<span>{{i.a}}</span>
+					<span style="margin-left: 200px;">{{i.b}}</span>
+				</div>
+			</div>
+		</div>
+	</template>
+</body>
+
+</html>
+<script src="vue.js"></script>
+<script>
+	Vue.component('no1', {
+		template: '#no1',
+		data() {
+			return {
+				arr: [{
+					a: '吸湿排汗运动速干头巾',
+					b: 'Shop Now'
+				}, {
+					a: '春夏男款短袖上衣',
+					b: 'Shop Now'
+				}, {
+					a: '户外跑步自行车骑行帽',
+					b: 'Shop Now'
+				}, {
+					a: '骑行便携户外运动水壶',
+					b: 'Shop Now'
+				}]
+			}
+		}
+	})
+	Vue.component('no2', {
+		template: '#no2',
+		data() {
+			return {
+				arr: [{
+					a: 'https://ccdn.goodq.top/caches/85e9413af2fb7f593b2c9e26f027fb64/aHR0cHM6Ly81ZDZjYWM5NThlNzFmLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDgvODM5ZDgxZmMwMTlmZmMxNWYzNzZkNzZjNmZmZDA1YzQuanBn.jpg',
+					b: '2018环青海湖-蓄势待发',
+					c: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和...'
+				}, {
+					a: 'https://ccdn.goodq.top/caches/85e9413af2fb7f593b2c9e26f027fb64/aHR0cHM6Ly81ZDZjYWM5NThlNzFmLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDgvNmYwOTU5MGZhMTY5YTNiYzhhZjZjODc2YWIzYTBlMjkuanBn.jpg',
+					b: '第一届公路自行车友谊赛',
+					c: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和...'
+				}, {
+					a: 'https://ccdn.goodq.top/caches/85e9413af2fb7f593b2c9e26f027fb64/aHR0cHM6Ly81ZDZjYWM5NThlNzFmLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDgvMTE0NWY4YjY1ZmU5YzIwMGRhMDA3OWQ1MjQ1NTU1ZWEuanBn.jpg',
+					b: '“爱在中国 · 为爱骑行”',
+					c: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和...'
+				}, {
+					a: 'https://ccdn.goodq.top/caches/85e9413af2fb7f593b2c9e26f027fb64/aHR0cHM6Ly81ZDZjYWM5NThlNzFmLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDgvZWE3M2Q5MjdiNzJjYjlmZDI2ZGNjZDA2ZTQwYTlhYjEuanBn.jpg',
+					v: '环鄱阳湖国际自行车大赛',
+					c: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和...'
+				}]
+			}
+		}
+	})
+	Vue.component('no3', {
+		template: '#no3',
+		data() {
+			return {
+				arr: [{
+					a: '活动咨询：400-0000-0000',
+					b: '寄件说明'
+				}, {
+					a: '活动咨询：400-0000-0000',
+					b: '退货相关'
+				}, {
+					a: '活动咨询：400-0000-0000',
+					b: '修补服务'
+				}]
+			}
+		}
+	})
+	new Vue({
+		el: '#box',
+	})
+</script>
