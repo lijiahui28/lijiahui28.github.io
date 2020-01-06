@@ -1,0 +1,5 @@
+{
+    "shui": [{"name":"牛肉水饺","money":"16","num":"0"},{"name":"羊肉水饺","money":"16","num":"0"},{"name":"素水饺","money":"16","num":"0"}],
+    "liu": [{"name":"小米粥","money":"16","num":"0"},{"name":"黑米粥","money":"16","num":"0"},{"name":"八宝粥","money":"16","num":"0"}],
+    "liang": [{"name":"凉拌豆腐","money":"16","num":"0"},{"name":"拍黄瓜","money":"16","num":"0"},{"name":"凉皮","money":"16","num":"0"}]
+}
