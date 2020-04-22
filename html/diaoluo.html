@@ -57,7 +57,7 @@
     var timer2 = null;
 
     for (var i = 0; i < 100; i++) {
-        $('.box1').append($('<div class="d"><img src="https://img2.woyaogexing.com/2020/04/22/84ffb9e7925c435bba6352dfa99090fd!400x400.jpeg"></div>'));
+        $('.box1').append($('<div class="d"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2999790430,3983210660&fm=15&gp=0.jpg"></div>'));
     }
 
     $('.d').each(function (index) {
@@ -80,7 +80,7 @@
                 transitionDuration: tim + 's',
                 transform: 'translateY(300px)'
             });
-            // $('.d').eq(i).children().attr('src','https://img2.woyaogexing.com/2020/04/22/9623bcf855a9454b9a8c25761c979082!400x400.jpeg');
+            // $('.d').eq(i).children().attr('src','https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3430285885,984575897&fm=26&gp=0.jpg');
             fn();
         }, 26)
     })
@@ -95,7 +95,7 @@
                 transitionDuration: tim + 's',
                 transform: 'translateY(0)'
             });
-            // $('.d').eq(i).children().attr('src','https://img2.woyaogexing.com/2020/04/22/84ffb9e7925c435bba6352dfa99090fd!400x400.jpeg')
+            // $('.d').eq(i).children().attr('src','https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2999790430,3983210660&fm=15&gp=0.jpg')
             fn();
             i++;
         }, 26)
@@ -104,9 +104,9 @@
     function fn() {
         $('.d').each(function (index) {
             if ($(this).offset().top > 270) {
-                $(this).children().attr('src', 'https://img2.woyaogexing.com/2020/04/22/9623bcf855a9454b9a8c25761c979082!400x400.jpeg')
+                $(this).children().attr('src', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3430285885,984575897&fm=26&gp=0.jpg')
             } else {
-                $(this).children().attr('src', 'https://img2.woyaogexing.com/2020/04/22/84ffb9e7925c435bba6352dfa99090fd!400x400.jpeg')
+                $(this).children().attr('src', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2999790430,3983210660&fm=15&gp=0.jpg')
             }
         })
     }
