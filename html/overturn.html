@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        .box{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            perspective: 500px;
+        }
+        img{
+            width: 500px;
+            height: 300px;
+        }
+        .content{
+            width: 500px;
+            height: 300px;
+            transition: 0.5s;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .item{
+            position: absolute;
+            left: 0;top: 0;
+        }
+        .item:last-of-type{
+            transform:translateZ(-1px) rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <div class="item"><img src="http://attach.bbs.miui.com/forum/201105/17/113554rnu40q7nbgnn3lgq.jpg" alt=""></div>
+            <div class="item"><img src="http://d.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c334c3e91cb1e4c510fd9f9a16a.jpg" alt=""></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var content=document.getElementsByClassName('content')[0];
+    var i=0;
+    content.onclick=function(){
+        i+=180;
+        this.style.transform=`rotateX(${i}deg)`;
+    }
+</script>
