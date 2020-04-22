@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style type="text/css">
+        * {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            position: relative;
+            width: 800px;
+            border: 1px solid #ccc;
+            height: 300px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        li {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            transition: 0.5s;
+        }
+
+        .tit,
+        .img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tit {
+            z-index: 99;
+            width: 100px;
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 300px;
+        }
+
+        .tit p {
+            width: 20px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 30px;
+            margin: auto;
+            color: #fff;
+        }
+
+        .img img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 700px;
+            height: 300px;
+            transition: 0.5s;
+        }
+
+        .trans {
+            transform: translateX(400px);
+        }
+
+        .trans2 {
+            transform: translateX(-200px);
+        }
+    </style>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <no1 :attr="url"></no1>
+    </div>
+    <!-- 组件 -->
+    <template id="no1">
+        <div>
+            <ul>
+                <li v-for="(i,$index) in c_attr" :style="{left:$index*l+'px'}" :class="$index>a?'trans':''">
+                    <div class="tit" @mouseover.self="a=$index">
+                        <p>此处是标题</p>
+                    </div>
+                    <div class="img">
+                        <img :src="i" :class="$index!=a?'trans2':''">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </template>
+</body>
+
+</html>
+<script type="text/javascript">
+    Vue.component('no1', {
+        template: '#no1',
+        props: ['attr'],
+        data() {
+            return {
+                c_attr: this.attr,
+                l: 100,
+                a: 0
+            }
+        }
+    })
+    new Vue({
+        el: '#box',
+        data: {
+            url: [
+				'http://attach.bbs.miui.com/forum/201105/17/113554rnu40q7nbgnn3lgq.jpg',
+				'http://d.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c334c3e91cb1e4c510fd9f9a16a.jpg',
+				'http://b.zol-img.com.cn/desk/bizhi/start/4/1392804976340.jpg',
+				'http://attachments.gfan.com/forum/attachments2/day_100828/1008282210aa9468b908940c6c.jpg',
+			]
+        }
+    })
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-bottom: 100px;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        .d {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>
+<script>
+    var tim = ((Math.random() * 1000) + 500) / 1000;
+    var timer1 = null;
+    var timer2 = null;
+
+    for (var i = 0; i < 100; i++) {
+        $('.box1').append($('<div class="d"><img src="https://img2.woyaogexing.com/2020/04/22/84ffb9e7925c435bba6352dfa99090fd!400x400.jpeg"></div>'));
+    }
+
+    $('.d').each(function (index) {
+        var l = (index % 10) * 20;
+        var t = parseInt(index / 10) * 20;
+        $(this).children().css({
+            top: -t,
+            left: -l
+        })
+    })
+
+    $('.box1').click(function () {
+        clearInterval(timer1);
+        clearInterval(timer2);
+        var i = $('.d').length;
+        timer1 = setInterval(function () {
+            tim = Math.random() + 0.5;
+            i--;
+            $('.d').eq(i).css({
+                transitionDuration: tim + 's',
+                transform: 'translateY(300px)'
+            });
+            // $('.d').eq(i).children().attr('src','https://img2.woyaogexing.com/2020/04/22/9623bcf855a9454b9a8c25761c979082!400x400.jpeg');
+            fn();
+        }, 26)
+    })
+
+    $('.box2').click(function () {
+        clearInterval(timer1);
+        clearInterval(timer2);
+        var i = 0;
+        timer2 = setInterval(function () {
+            tim = Math.random() + 0.5;
+            $('.d').eq(i).css({
+                transitionDuration: tim + 's',
+                transform: 'translateY(0)'
+            });
+            // $('.d').eq(i).children().attr('src','https://img2.woyaogexing.com/2020/04/22/84ffb9e7925c435bba6352dfa99090fd!400x400.jpeg')
+            fn();
+            i++;
+        }, 26)
+    })
+
+    function fn() {
+        $('.d').each(function (index) {
+            if ($(this).offset().top > 270) {
+                $(this).children().attr('src', 'https://img2.woyaogexing.com/2020/04/22/9623bcf855a9454b9a8c25761c979082!400x400.jpeg')
+            } else {
+                $(this).children().attr('src', 'https://img2.woyaogexing.com/2020/04/22/84ffb9e7925c435bba6352dfa99090fd!400x400.jpeg')
+            }
+        })
+    }
+</script>

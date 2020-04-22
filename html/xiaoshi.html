@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-bottom: 100px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .parent {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .parent:first-of-type {
+            z-index: 1;
+        }
+
+        .parent:last-of-type {
+            z-index: 0;
+        }
+
+        .d {
+            float: left;
+            width: 20px;
+            height: 20px;
+            float: left;
+            overflow: hidden;
+            background-size: 200px 200px;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="parent"></div>
+        <div class="parent"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var num = 1;
+
+    for (var i = 0; i < 100; i++) {
+        $('.parent').append($('<div class="d"></div>'));
+    }
+
+    $('.parent').eq(0).children().css('backgroundImage', 'url(https://img2.woyaogexing.com/2020/04/22/9623bcf855a9454b9a8c25761c979082!400x400.jpeg)');
+    $('.parent').eq(1).children().css('backgroundImage', 'url(https://img2.woyaogexing.com/2020/04/22/84ffb9e7925c435bba6352dfa99090fd!400x400.jpeg)');
+
+    $('.parent').each(function () {
+        $(this).children().each(function (index) {
+            var l = (index % 10) * 20;
+            var t = parseInt(index / 10) * 20;
+            $(this).css({
+                backgroundPositionY: -t + 'px',
+                backgroundPositionX: -l + 'px'
+            })
+        })
+    })
+
+    $('.box1').click(function () {
+        var img1 = $('.parent').eq(0).children().css('backgroundImage');
+
+        function sj() {
+            var arr1 = [];
+            while (arr1.length <= 99) {
+                var num = Math.round(Math.random() * 99);
+                if (arr1.indexOf(num) < 0) {
+                    arr1.push(num)
+                }
+            }
+            return arr1;
+        }
+
+        var arr = sj();
+        var num=arr.length;
+
+        timer = setInterval(function () {
+            num--;
+            $('.parent').eq(0).children().eq(arr[num]).css('opacity', '0')
+        }, 26)
+
+        setTimeout(function () {
+            $('.parent').eq(0).remove();
+            $('.box1').append('<div class="parent">');
+            for (var i = 0; i < 100; i++) {
+                $('.parent').eq(1).append($('<div class="d"></div>'));
+            }
+            $('.parent').eq(1).children().css('backgroundImage', img1)
+            $('.parent').each(function () {
+                $(this).children().each(function (index) {
+                    var l = (index % 10) * 20;
+                    var t = parseInt(index / 10) * 20;
+                    $(this).css({
+                        backgroundPositionY: -t + 'px',
+                        backgroundPositionX: -l + 'px'
+                    })
+                })
+            })
+        }, 3000)
+    })
+</script>

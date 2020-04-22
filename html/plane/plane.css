@@ -1,0 +1,121 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+
+}
+
+#contentDiv {
+	/*
+	4:320*568
+	4.7: 375*667
+	5.5:414*750;
+	*/
+
+	width: 320px;
+	height: 568px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+button {
+	width: 140px;
+	height: 30px;
+	border: 1px solid #000;
+	border-radius: 15px;
+	background-color: #c4c9ca;
+}
+
+#startDiv {
+	width: 100%;
+	height: 100%;
+	background-image: url(image/开始背景.png);
+	background-size: 100% 100%;
+}
+
+#startBtn {
+	position: absolute;
+	left: 50%;
+	margin-left: -70px;
+	bottom: 30px;
+}
+
+#mainDiv {
+	width: 100%;
+	height: 100%;
+	background-image: url(image/background_1.png);
+	background-size: 100% 100%;
+	display: none;
+	background-repeat: repeat-y;
+}
+
+#mainDiv img {
+	position: absolute;
+}
+
+#markDiv {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	z-index: 10;
+}
+
+#pauseDiv {
+	position: absolute;
+	top: 220px;
+	left: 50%;
+	margin-left: -70px;
+	z-index: 10;
+	display: none;
+}
+
+#pauseDiv>button {
+	margin-bottom: 20px;
+}
+
+#endDiv {
+	width: 200px;
+	position: absolute;
+	top: 220px;
+	left: 50%;
+	margin-left: -100px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	text-align: center;
+	background-color: #c4c9ca;
+	z-index: 10;
+	display: none;
+}
+
+.title{
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 1px solid #000;
+}
+
+#markP{
+	height: 100px;
+	line-height: 100px;
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 1px solid #000;
+}
+
+.footer{
+	height: 60px;
+	line-height: 60px;
+}
+
+#restartBtn2{
+	width: 80px;
+	background-color: #eee;
+}

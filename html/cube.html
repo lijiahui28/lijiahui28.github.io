@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+    <style>
+        .content {
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            transform-style: preserve-3d;
+            transform-origin: center center 100px;
+            position: relative;
+            transition: .5s;
+            transition-timing-function: linear;
+        }
+
+        .item {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            text-align: center;
+            line-height: 200px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .3;
+            font-size: 50px;
+            transition: .5s;
+            border: 1px solid #000;
+        }
+
+        .item1 {
+            transform-origin: left center;
+            /* transform: rotateY(-90deg); */
+        }
+
+        .item2 {
+            transform-origin: right center;
+            /* transform: rotateY(90deg); */
+        }
+
+        .item3 {
+            transform-origin: top center;
+            /* transform: rotateX(90deg); */
+        }
+
+        .item4 {
+            transform-origin: bottom center;
+            /* transform: rotateX(-90deg); */
+        }
+
+        /* .item5 {
+            transform: translateZ(200px);
+        }
+
+        .item6 {
+            transform: rotateY(180deg);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="box">
+            <div class="item item1">1</div>
+            <div class="item item2">2</div>
+            <div class="item item3">3</div>
+            <div class="item item4">4</div>
+            <div class="item item5">5</div>
+            <div class="item item6">6</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var num = 0;
+    var deg = 0;
+    setInterval(function () {
+        switch (num) {
+            case 0:
+                $('.item').eq(num).css('transform', 'rotateY(-90deg)')
+                break;
+            case 1:
+                $('.item').eq(num).css('transform', 'rotateY(90deg)')
+                break;
+            case 2:
+                $('.item').eq(num).css('transform', 'rotateX(90deg)')
+                break;
+            case 3:
+                $('.item').eq(num).css('transform', 'rotateX(-90deg)')
+                break;
+            case 4:
+                $('.item').eq(num).css('transform', 'translateZ(200px)')
+                break;
+            case 5:
+                $('.item').eq(num).css('transform', 'rotateY(180deg)')
+                break;
+            default:
+                deg+=40;
+                $('.box').css('transform', `rotateY(${deg}deg)`)
+        }
+        num++;
+    }, 500)
+</script>

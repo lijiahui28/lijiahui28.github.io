@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#content {
+			width: 600px;
+			height: 400px;
+			border: 1px solid #ccc;
+			margin: 50px auto;
+			position: relative;
+		}
+		.parentDiv {
+			width: 600px;
+			height: 400px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.item {
+			width: 60px;
+			height: 40px;
+			background-size: 600px 400px;
+			
+			float: left;
+
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="content">
+		<!-- div>div*100 -->
+	</div>
+	
+</body>
+<script type="text/javascript">
+	
+
+	var index = 0;
+	var imgArr = [
+				'http://attach.bbs.miui.com/forum/201105/17/113554rnu40q7nbgnn3lgq.jpg',
+				'http://d.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c334c3e91cb1e4c510fd9f9a16a.jpg',
+				'http://b.zol-img.com.cn/desk/bizhi/start/4/1392804976340.jpg',
+				'http://attachments.gfan.com/forum/attachments2/day_100828/1008282210aa9468b908940c6c.jpg',
+			];
+	var z = 99999999;
+	boom();
+	function boom() {
+		z--;
+		var parentDiv = document.createElement('div');
+		parentDiv.className = 'parentDiv';
+		parentDiv.style.zIndex = z;
+		content.appendChild(parentDiv);
+		var allItem = [];
+		for(var i = 0; i < 10; i++){
+			for(var j = 0; j < 10; j++){
+				var oDiv = document.createElement('div');
+				allItem.push(oDiv);
+				oDiv.style.backgroundImage = `url(${imgArr[index%4]})`;
+				oDiv.className = 'item';
+				parentDiv.appendChild(oDiv);
+				oDiv.style.backgroundPositionX = -60*j+'px';
+				oDiv.style.backgroundPositionY = -40*i+'px';
+				oDiv.style.transition = Math.random()+0.5+'s';
+			}
+		}
+
+		setTimeout(function () {
+			index++;
+			boom();
+			allItem.forEach( function(item, index) {
+				// -200 +200
+				item.style.transform = `
+					translateX(${Math.random()*400-200}px)
+					translateY(${Math.random()*400-200}px)
+					rotateX(${Math.random()*360-180}deg)
+					rotateY(${Math.random()*360-180}deg)
+					rotateZ(${Math.random()*180-90}deg)
+				`;
+
+				item.style.opacity = '0';
+			});
+
+			// setTimeout(function () {
+			// }, 1500);
+
+		}, 2000);
+
+		setTimeout(function () {
+			parentDiv.remove();
+		}, 3500);
+	}
+
+</script>
+
+</html>

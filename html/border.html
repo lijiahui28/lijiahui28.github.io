@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .box1 {
+            width: 480px;
+            height: 480px;
+            top: 10px;
+            left: 10px;
+            background-color: #fff;
+            position: absolute;
+            z-index: 2;
+            font-size: 30px;
+            text-align: center;
+            line-height: 480px;
+        }
+
+        .box2,
+        .box3 {
+            width: 0;
+            height: 0;
+            position: absolute;
+            background-color: green;
+        }
+
+        .box2 {
+            left: 0;
+            top: 10px;
+        }
+
+        .box3 {
+            right: 0;
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">1</div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var num = 0;
+    var num2 = 0;
+    var timer = null;
+    var timer2 = null;
+    $('.box1').mouseover(function () {
+        timer = setInterval(function () {
+            num += 10;
+            $('.box2').width(10).height(num);
+            $('.box3').width(10).height(num);
+            if (num >= 490) {
+                num2 += 10;
+                $('.box2').height(490).width(num2);
+                $('.box3').height(490).width(num2);
+            }
+            if (num2 >= 500) {
+                clearInterval(timer)
+                num = 490;
+                num2 = 500;
+            }
+        }, 5)
+    })
+    $('.box1').mouseout(function () {
+        timer2 = setInterval(function () {
+            num -= 10;
+            $('.box2').width(num).height(490);
+            $('.box3').width(num).height(490);
+            if (num <= 0) {
+                num2 -= 10;
+                $('.box2').height(num2).width(10);
+                $('.box3').height(num2).width(10);
+            }
+            if (num2 <= 0) {
+                clearInterval(timer2)
+                num=0;
+                num2=0;
+            }
+        }, 5)
+    })
+</script>
